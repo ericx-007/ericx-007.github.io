@@ -3,24 +3,24 @@
  * ============================================================ */
 window.SITE_CONFIG = {
   /* ---- 身份 ---- */
-  name: "你的名字",            // 显示在标题、导航、页脚
+  name: "Xuan Su",            // 显示在标题、导航、页脚
   role: "计算机科学与技术 · 本科生",
-  tagline: "一句能让自己记住为什么出发的话 —— 比如：写出让世界好一点的代码。",
-  location: "中国 · 你的城市",
-  avatar: "assets/avatar.svg", // 换成你自己的头像图片路径即可
+  tagline: "我想见证未来的样子",
+  location: "中国 · 杭州",
+  avatar: "assets/elysia.jpg", // 换成你自己的头像图片路径即可
 
   /* ---- 关于我 ---- */
   about: [
     "在这里写一小段自我介绍：你是谁、在学什么、喜欢什么。比如：目前主攻 XX，业余喜欢折腾开源和写点小工具。",
     "再写一段：你的目标、爱好，或者任何想让人知道的事。这是你的主页，写你想写的。",
   ],
-  education: { school: "某某大学", major: "计算机科学与技术", years: "20XX - 20XX", note: "绩点 / 方向 / 想说的话" },
+  education: { school: "浙江大学", major: "计算机科学与技术", years: "2024 - 2028", note: "绩点 / 方向 / 想说的话" },
 
   /* ---- 社交链接（显示在「联系我」）---- */
   links: [
-    { label: "GitHub", url: "https://github.com/你的用户名" },
-    { label: "邮箱",   url: "mailto:you@example.com" },
-    { label: "Bilibili", url: "https://space.bilibili.com/你的UID" },
+    { label: "GitHub", url: "https://github.com/ericx-007" },
+    { label: "邮箱",   url: "2718567572@qq.com" },
+    { label: "Bilibili", url: "https://space.bilibili.com/524838949" },
     { label: "博客",   url: "https://你的博客地址" },
   ],
 
@@ -35,13 +35,13 @@ window.SITE_CONFIG = {
   ],
 
   /* ---- 兴趣标签 ---- */
-  interests: ["算法", "开源", "独立开发", "机器学习", "折腾", "撸猫"],
+  interests: ["算法", "开源", "独立开发", "机器学习", "折腾", "Agent"],
 
   /* ---- 当前状态（关于页右侧小卡片）---- */
   status: "🎯 正在做：写毕业设计 / 维护 XXX 项目 / 学习 XX 技术 ……",
 
   /* ---- GitHub 用户名：填上后自动显示统计卡片与连击图 ---- */
-  github: "你的用户名",
+  github: "ericx-007",
 
   /* ---- 每日一句：按日期轮流显示 ---- */
   quotes: [
