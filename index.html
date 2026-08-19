@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>你的名字 · 个人主页</title>
+  <meta name="description" content="计算机专业学生个人主页：关于我、项目、技能与每日打卡。深海主题。">
+  <meta property="og:title" content="你的名字 · 个人主页">
+  <meta property="og:description" content="计算机专业学生个人主页：关于我、项目、技能与每日打卡。">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    // 提前设置主题，避免闪烁（跟随系统 / 手动选择）
+    (function () {
+      try {
+        var t = localStorage.getItem('home-theme');
+        if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.dataset.theme = t;
+      } catch (e) { /* file:// 下 localStorage 异常时静默 */ }
+    })();
+  </script>
+</head>
+<body>
+  <!-- 深海背景：气泡 -->
+  <div class="sea" aria-hidden="true">
+    <span class="bubble b1"></span><span class="bubble b2"></span><span class="bubble b3"></span>
+    <span class="bubble b4"></span><span class="bubble b5"></span><span class="bubble b6"></span>
+    <span class="bubble b7"></span><span class="bubble b8"></span>
+  </div>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="nav-brand" href="#home">🐋 <span data-fill="name">个人主页</span></a>
+      <nav class="nav-links" aria-label="主导航">
+        <a href="#about">关于我</a>
+        <a href="#skills">技能</a>
+        <a href="#projects">项目</a>
+        <a href="#motivation">动力站</a>
+        <a href="#timeline">时间线</a>
+        <a href="#contact">联系</a>
+      </nav>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="切换明暗模式" title="切换明暗模式">🌙</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section id="home" class="hero">
+      <div class="hero-inner">
+        <div class="hero-avatar" id="avatar-wrap">
+          <img id="avatar" src="" alt="头像">
+        </div>
+        <h1 class="hero-name"><span data-fill="name">你的名字</span></h1>
+        <p class="hero-role" data-fill="role">计算机科学与技术 · 学生</p>
+        <p class="hero-tagline" data-fill="tagline">一句能让自己记住为什么出发的话。</p>
+        <div class="hero-badges">
+          <span class="badge" data-fill="location">📍 中国</span>
+          <span class="badge" data-fill="edu-badge">🎓 计算机科学与技术</span>
+        </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" data-fill="github-link" href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn btn-ghost" href="#projects">看项目</a>
+          <a class="btn btn-ghost" href="#motivation">找点动力</a>
+        </div>
+      </div>
+      <div class="hero-wave" aria-hidden="true"></div>
+    </section>
+
+    <!-- 关于我 -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section-title"><span class="ornament">❀</span> 关于我 <span class="ornament">❀</span></h2>
+        <div class="about-grid">
+          <div class="card about-text">
+            <p data-fill="about1">在这里写一小段自我介绍：你是谁、在学什么、喜欢什么。</p>
+            <p data-fill="about2">再多写一点：目标、爱好、或者任何想让人知道的事。</p>
+            <div class="info-list" id="info-list"></div>
+          </div>
+          <div class="card about-extra">
+            <h3>兴趣标签</h3>
+            <div class="chips" id="chips"></div>
+            <h3>当前状态</h3>
+            <div class="status-box" id="status-box"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 技能 -->
+    <section id="skills" class="section">
+      <div class="container">
+        <h2 class="section-title"><span class="ornament">❀</span> 技能树 <span class="ornament">❀</span></h2>
+        <div class="skills-grid" id="skills-grid"></div>
+      </div>
+    </section>
+
+    <!-- 项目 -->
+    <section id="projects" class="section">
+      <div class="container">
+        <h2 class="section-title"><span class="ornament">❀</span> 项目 <span class="ornament">❀</span></h2>
+        <p class="section-sub">完成的事、正在做的事、计划做的事 —— 都放在这里，看着它一点点长满。</p>
+        <div class="tabs" role="tablist" aria-label="项目筛选">
+          <button class="tab is-active" role="tab" aria-selected="true" data-status="done">✅ 已完成</button>
+          <button class="tab" role="tab" aria-selected="false" data-status="doing">🔨 进行中</button>
+          <button class="tab" role="tab" aria-selected="false" data-status="planned">🗓 计划中</button>
+        </div>
+        <div class="project-grid" id="project-grid"></div>
+        <p class="empty-hint" id="project-empty" hidden>这一栏还空着 —— 去创造第一条吧 🐋</p>
+      </div>
+    </section>
+
+    <!-- 动力站 -->
+    <section id="motivation" class="section">
+      <div class="container">
+        <h2 class="section-title"><span class="ornament">❀</span> 动力站 <span class="ornament">❀</span></h2>
+        <p class="section-sub">学累了就来看看：今天的句子、坚持的天数、走过的路。</p>
+        <div class="moti-grid">
+          <div class="card quote-card">
+            <h3>今日一句</h3>
+            <blockquote id="quote-text">Loading…</blockquote>
+            <cite id="quote-by"></cite>
+          </div>
+          <div class="card goal-card">
+            <h3>今日目标 <span class="streak" id="streak" title="连续完成打卡的天数">🔥 0 天</span></h3>
+            <div class="goal-progress"><div class="goal-progress-fill" id="goal-progress-fill"></div></div>
+            <ul class="goal-list" id="goal-list"></ul>
+            <form class="goal-add" id="goal-add">
+              <input id="goal-input" type="text" maxlength="60" placeholder="加一个小目标…" aria-label="新目标">
+              <button type="submit" class="btn btn-small">＋</button>
+            </form>
+            <p class="goal-hint">完成一个勾一个 —— 打卡会记住你的坚持（数据存在本机浏览器里）。</p>
+          </div>
+          <div class="card github-card">
+            <h3>GitHub 足迹</h3>
+            <div id="github-stats">
+              <p class="goal-hint">在 <code>data/site.config.js</code> 里填上你的 GitHub 用户名后，这里会自动显示提交统计与连击热力图。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 时间线 -->
+    <section id="timeline" class="section">
+      <div class="container">
+        <h2 class="section-title"><span class="ornament">❀</span> 里程碑 <span class="ornament">❀</span></h2>
+        <p class="section-sub">把重要的节点记下来，回头看时才知道自己走了多远。</p>
+        <ol class="timeline" id="timeline"></ol>
+      </div>
+    </section>
+
+    <!-- 博客预留 -->
+    <section id="blog" class="section">
+      <div class="container">
+        <h2 class="section-title"><span class="ornament">❀</span> 随笔 <span class="ornament">❀</span></h2>
+        <div class="card" id="blog-list"></div>
+      </div>
+    </section>
+
+    <!-- 联系 -->
+    <section id="contact" class="section">
+      <div class="container">
+        <h2 class="section-title"><span class="ornament">❀</span> 联系我 <span class="ornament">❀</span></h2>
+        <div class="contact-links" id="contact-links"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year">2026</span> <span data-fill="name">你的名字</span> · 用 ♥ 和 🐋 搭建</p>
+    <p class="footer-meta">最后更新：<span id="updated"></span></p>
+  </footer>
+
+  <script src="data/site.config.js"></script>
+  <script src="data/projects.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
