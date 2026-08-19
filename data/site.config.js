@@ -19,7 +19,7 @@ window.SITE_CONFIG = {
   /* ---- 社交链接（显示在「联系我」）---- */
   links: [
     { label: "GitHub", url: "https://github.com/ericx-007" },
-    { label: "邮箱",   url: "2718567572@qq.com" },
+    { label: "邮箱",   url: "mailto:2718567572@qq.com" },
     { label: "Bilibili", url: "https://space.bilibili.com/524838949" },
     { label: "博客",   url: "https://你的博客地址" },
   ],
